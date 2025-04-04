@@ -1,8 +1,23 @@
 ---
+import HoroscopeCard from '@/components/HoroscopeCard.astro';
 import Layout from '@layouts/Layout.astro';
 
 const title = "AstroAura – Tu guía cósmica diaria";
 const description = "Consulta tu horóscopo diario, compatibilidad amorosa y carta natal básica. Astrología personalizada en español.";
+const signos = [
+  { sign: "aries", emoji: "♈", element: "Fuego" },
+  { sign: "tauro", emoji: "♉", element: "Tierra" },
+  { sign: "géminis", emoji: "♊", element: "Aire" },
+  { sign: "cáncer", emoji: "♋", element: "Agua" },
+  { sign: "leo", emoji: "♌", element: "Fuego" },
+  { sign: "virgo", emoji: "♍", element: "Tierra" },
+  { sign: "libra", emoji: "♎", element: "Aire" },
+  { sign: "escorpio", emoji: "♏", element: "Agua" },
+  { sign: "sagitario", emoji: "♐", element: "Fuego" },
+  { sign: "capricornio", emoji: "♑", element: "Tierra" },
+  { sign: "acuario", emoji: "♒", element: "Aire" },
+  { sign: "piscis", emoji: "♓", element: "Agua" }
+];
 ---
 
 <Layout {title} {description}>
@@ -10,9 +25,11 @@ const description = "Consulta tu horóscopo diario, compatibilidad amorosa y car
 		<div class="max-w-md mx-auto">
 			<h1 class="text-2xl sm:text-3xl md:text-4xl font-bold">✨ Bienvenido a AstroAura</h1>
 			<p class="mt-2 text-sm sm:text-base">Tu guía cósmica diaria</p>
-			<a href="/horoscopes/aries" class="inline-block mt-4 sm:mt-6 bg-purple-600 px-4 py-2 rounded-full text-white hover:bg-purple-700 transition-colors text-sm sm:text-base">
-				Ver horóscopo de Aries
-			</a>
+			<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-2">
+				{signos.map(signo => (
+				  <HoroscopeCard sign={signo.sign} emoji={signo.emoji} element={signo.element} />
+				))}
+			  </div>
 		</div>
 	</main>
 </Layout>
