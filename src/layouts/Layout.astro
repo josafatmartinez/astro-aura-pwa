@@ -11,15 +11,15 @@ interface Props {
 
 // Default values
 const {
-  title = "Astro Basics",
-  description = "A basic Astro website with enhanced SEO",
+  title = "AstroAura – Tu guía cósmica diaria",
+  description = "Descubre tu horóscopo diario, compatibilidad y carta astral. Astrología personalizada en español.",
   image = "/images/social-image.jpg",
   canonicalURL = Astro.url,
 } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -43,6 +43,7 @@ const {
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:site" content="@AstroAuraApp" />
     <meta property="twitter:url" content={Astro.url} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
@@ -54,7 +55,10 @@ const {
       sizes="180x180"
       href="/apple-touch-icon-180x180.png"
     />
-
+    <meta
+      name="keywords"
+      content="horóscopo, astrología, carta natal, signos zodiacales, compatibilidad, astrología en español"
+    />
     <!-- Theme Color -->
     <meta name="theme-color" content="#ffffff" />
   </head>
