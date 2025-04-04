@@ -13,11 +13,11 @@ const { sign } = Astro.params;
 const { horoscopeData } = Astro.props;
 // Ensure sign exists and is a string
 const signKey = typeof sign === 'string' ? sign : '';
-const title = `Horóscopo diario de ${signKey.toUpperCase()} | AstroAura`;
-const description = `Consulta el horóscopo diario y amoroso para ${signKey}.`;
+const title = `Horóscopo Diario de ${signKey.charAt(0).toUpperCase() + signKey.slice(1)} | AstroAura`;
+const description = `Consulta el horóscopo diario y del amor para ${signKey}. Energía astral, guía emocional y compatibilidad zodiacal.`;
 
 if (!horoscopeData) {
-    throw Astro.redirect('/not-found');
+    throw Astro.redirect('/compatibility');
 }
 ---
 

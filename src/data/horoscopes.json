@@ -1,22 +1,122 @@
 {
   "aries": {
     "daily": [
-      "Hoy los astros te guían a iniciar algo nuevo.",
-      "El fuego en ti se enciende con fuerza. Lidera con el corazón."
+      "Hoy es un buen día para tomar la iniciativa.",
+      "Tu energía vital está en su punto más alto."
     ],
     "love": [
-      "Tu energía romántica está al máximo. Aprovecha para conectar.",
-      "Recuerda que la pasión sin paciencia puede quemar."
+      "El amor necesita paciencia. Escucha más.",
+      "La pasión está encendida, pero no te precipites."
     ]
   },
   "tauro": {
     "daily": [
-      "Busca estabilidad, pero no te cierres al cambio.",
-      "El universo favorece los placeres simples hoy."
+      "Busca estabilidad, pero mantén apertura al cambio.",
+      "Disfruta los placeres simples con conciencia."
     ],
     "love": [
-      "El amor florece en terreno fértil. Sé constante.",
-      "Escucha más, exige menos. El cariño está ahí."
+      "Conecta desde la seguridad emocional.",
+      "Tu lealtad es tu mayor atractivo hoy."
+    ]
+  },
+  "géminis": {
+    "daily": [
+      "Tu mente vuela alto. Es un día ideal para crear.",
+      "Evita la dispersión y enfócate en lo esencial."
+    ],
+    "love": [
+      "La conversación profunda fortalece vínculos.",
+      "Tu encanto natural puede conquistar sin esfuerzo."
+    ]
+  },
+  "cáncer": {
+    "daily": [
+      "Escucha tu intuición, te está guiando bien.",
+      "El hogar y la familia cobran protagonismo hoy."
+    ],
+    "love": [
+      "Protégete, pero no te cierres al amor.",
+      "La sensibilidad no es debilidad, es tu poder."
+    ]
+  },
+  "leo": {
+    "daily": [
+      "Brillas naturalmente. Deja que otros también lo hagan.",
+      "El reconocimiento que buscas llega si lideras con el corazón."
+    ],
+    "love": [
+      "La pasión es fuerte, pero cuida el orgullo.",
+      "Amar es compartir el escenario, no dominarlo."
+    ]
+  },
+  "virgo": {
+    "daily": [
+      "Tu organización es clave, pero suelta lo que no controlas.",
+      "Hoy, menos perfección, más conexión."
+    ],
+    "love": [
+      "La atención a los detalles enamora.",
+      "Deja espacio para el error, incluso en el amor."
+    ]
+  },
+  "libra": {
+    "daily": [
+      "Busca armonía, pero no sacrifiques tu autenticidad.",
+      "La belleza está en la verdad que compartes."
+    ],
+    "love": [
+      "El equilibrio entre dar y recibir es esencial.",
+      "Conecta desde el corazón, no desde la apariencia."
+    ]
+  },
+  "escorpio": {
+    "daily": [
+      "Tu intensidad transforma todo lo que tocas.",
+      "Es buen día para soltar viejos rencores."
+    ],
+    "love": [
+      "La conexión profunda requiere vulnerabilidad.",
+      "Pasión sin control puede consumir. Canalízala."
+    ]
+  },
+  "sagitario": {
+    "daily": [
+      "Tu espíritu libre necesita espacio para crecer.",
+      "Aprender algo nuevo te energizará hoy."
+    ],
+    "love": [
+      "El amor también puede ser una aventura.",
+      "Sé honesto con lo que buscas realmente."
+    ]
+  },
+  "capricornio": {
+    "daily": [
+      "Tu disciplina rinde frutos hoy.",
+      "No olvides descansar mientras construyes."
+    ],
+    "love": [
+      "La estabilidad también puede ser emocionante.",
+      "Muestra tu lado tierno, aunque cueste."
+    ]
+  },
+  "acuario": {
+    "daily": [
+      "Tus ideas pueden inspirar a otros. Compártelas.",
+      "Hoy es un buen día para romper la rutina."
+    ],
+    "love": [
+      "Amar no siempre requiere lógica. Déjate llevar.",
+      "Tu rareza es magnética. No la escondas."
+    ]
+  },
+  "piscis": {
+    "daily": [
+      "Tu sensibilidad te conecta con lo invisible.",
+      "La creatividad es tu refugio y tu regalo hoy."
+    ],
+    "love": [
+      "El alma también ama. Escucha tus emociones.",
+      "Romance y magia se entrelazan. Disfrútalo."
     ]
   }
 }
