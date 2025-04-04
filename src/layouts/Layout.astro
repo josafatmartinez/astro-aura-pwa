@@ -1,6 +1,4 @@
 ---
-import "@styles/global.css";
-
 // Define SEO props
 interface Props {
   title?: string;
@@ -68,9 +66,10 @@ const {
   </body>
 </html>
 <script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js')
-      .then(reg => console.log('Service Worker registrado'))
-      .catch(err => console.error('Error al registrar el SW', err));
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker
+      .register("/service-worker.js")
+      .then((reg) => console.log("Service Worker registrado"))
+      .catch((err) => console.error("Error al registrar el SW", err));
   }
 </script>
