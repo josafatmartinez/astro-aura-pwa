@@ -1,0 +1,22 @@
+{
+  "aries": {
+    "daily": [
+      "Hoy los astros te guían a iniciar algo nuevo.",
+      "El fuego en ti se enciende con fuerza. Lidera con el corazón."
+    ],
+    "love": [
+      "Tu energía romántica está al máximo. Aprovecha para conectar.",
+      "Recuerda que la pasión sin paciencia puede quemar."
+    ]
+  },
+  "tauro": {
+    "daily": [
+      "Busca estabilidad, pero no te cierres al cambio.",
+      "El universo favorece los placeres simples hoy."
+    ],
+    "love": [
+      "El amor florece en terreno fértil. Sé constante.",
+      "Escucha más, exige menos. El cariño está ahí."
+    ]
+  }
+}

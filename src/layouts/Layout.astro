@@ -1,5 +1,7 @@
 ---
-// Define SEO props
+import "@styles/global.css"; // Asegúrate de tener esta hoja de estilos
+
+// Props que puedes pasar desde cualquier página
 interface Props {
   title?: string;
   description?: string;
@@ -7,7 +9,7 @@ interface Props {
   canonicalURL?: URL | string;
 }
 
-// Default values
+// Valores por defecto para SEO
 const {
   title = "AstroAura – Tu guía cósmica diaria",
   description = "Descubre tu horóscopo diario, compatibilidad y carta astral. Astrología personalizada en español.",
@@ -20,19 +22,21 @@ const {
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- Primary Meta Tags -->
+    <!-- SEO Meta -->
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
-
-    <!-- Canonical URL -->
+    <meta
+      name="keywords"
+      content="horóscopo, astrología, carta natal, signos zodiacales, compatibilidad, astrología en español"
+    />
     <link rel="canonical" href={canonicalURL} />
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url} />
     <meta property="og:title" content={title} />
@@ -40,36 +44,27 @@ const {
     <meta property="og:image" content={new URL(image, Astro.url)} />
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:site" content="@AstroAuraApp" />
-    <meta property="twitter:url" content={Astro.url} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={new URL(image, Astro.url)} />
-    <!-- Apple Touch Icon -->
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/apple-touch-icon-180x180.png"
-    />
-    <meta
-      name="keywords"
-      content="horóscopo, astrología, carta natal, signos zodiacales, compatibilidad, astrología en español"
-    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@AstroAuraApp" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(image, Astro.url)} />
+
+    <!-- PWA -->
     <link rel="manifest" href="/manifest.webmanifest" />
-    <!-- Theme Color -->
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#121212" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   </head>
-  <body>
+  <body class="bg-black text-white font-sans">
     <slot />
+
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("/service-worker.js")
+          .then(() => console.log("Service Worker registrado"))
+          .catch((err) => console.error("SW registration failed", err));
+      }
+    </script>
   </body>
 </html>
-<script>
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker
-      .register("/service-worker.js")
-      .then((reg) => console.log("Service Worker registrado"))
-      .catch((err) => console.error("Error al registrar el SW", err));
-  }
-</script>
