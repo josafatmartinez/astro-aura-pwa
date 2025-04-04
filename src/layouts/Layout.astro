@@ -59,6 +59,7 @@ const {
       name="keywords"
       content="horóscopo, astrología, carta natal, signos zodiacales, compatibilidad, astrología en español"
     />
+    <link rel="manifest" href="/manifest.webmanifest" />
     <!-- Theme Color -->
     <meta name="theme-color" content="#ffffff" />
   </head>
@@ -66,3 +67,10 @@ const {
     <slot />
   </body>
 </html>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(reg => console.log('Service Worker registrado'))
+      .catch(err => console.error('Error al registrar el SW', err));
+  }
+</script>
