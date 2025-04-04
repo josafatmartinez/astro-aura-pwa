@@ -1,0 +1,17 @@
+{
+  "aries": {
+    "compatibles": ["leo", "sagitario", "acuario"],
+    "incompatibles": ["cáncer", "capricornio"],
+    "mensaje": "Aries vibra con energía, aventura y pasión. Busca fuego y libertad."
+  },
+  "tauro": {
+    "compatibles": ["virgo", "capricornio", "cáncer"],
+    "incompatibles": ["acuario", "leo"],
+    "mensaje": "Tauro busca estabilidad, afecto y seguridad. Le va bien con signos tierra y agua."
+  },
+  "leo": {
+    "compatibles": ["aries", "sagitario", "géminis"],
+    "incompatibles": ["tauro", "escorpio"],
+    "mensaje": "Leo necesita admiración, juego y fuego. Su corazón es grande pero exigente."
+  }
+}
