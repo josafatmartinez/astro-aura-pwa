@@ -1,0 +1,169 @@
+---
+import DefaultLayout from "@layouts/Layout.astro";
+
+const title = "Carta Natal Básica | AstroAura";
+const description =
+  "Descubre tu signo solar y una interpretación inicial según tu fecha de nacimiento.";
+---
+
+<DefaultLayout {title} {description}>
+  <main class="flex items-center justify-center min-h-[80vh] w-full max-w-xl mx-auto px-4 py-6 text-white">
+    <div class="w-full">
+      <h1 class="text-2xl sm:text-3xl font-bold text-center mb-4 sm:mb-6">
+        🌠 Tu Carta Natal Básica
+      </h1>
+
+      <form id="natalForm" class="flex flex-col gap-3 sm:gap-4 mb-6">
+        <label class="text-sm sm:text-base">
+          Fecha de nacimiento:
+          <input
+            type="date"
+            name="birthdate"
+            required
+            class="w-full mt-1 p-2 bg-black border border-purple-500 rounded text-white text-sm"
+          />
+        </label>
+        <label class="text-sm sm:text-base">
+          Hora de nacimiento (opcional):
+          <input
+            type="time"
+            name="birthtime"
+            class="w-full mt-1 p-2 bg-black border border-purple-500 rounded text-white text-sm"
+          />
+        </label>
+        <label class="text-sm sm:text-base">
+          Lugar de nacimiento (ciudad):
+          <input
+            type="text"
+            name="birthplace"
+            class="w-full mt-1 p-2 bg-black border border-purple-500 rounded text-white text-sm"
+          />
+        </label>
+        <button
+          type="submit"
+          class="bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2 px-4 rounded hover:scale-105 transition mt-2 text-sm sm:text-base"
+        >
+          Calcular
+        </button>
+      </form>
+
+      <div
+        id="result"
+        class="hidden border border-purple-700 rounded p-3 sm:p-4 bg-purple-900/30"
+      >
+        <h2 class="text-lg sm:text-xl font-semibold mb-2">
+          🔮 Tu signo solar es: <span id="sunSign" class="font-bold"></span>
+        </h2>
+        <p id="message" class="text-sm sm:text-base">Aquí aparecerá tu interpretación básica...</p>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" is:inline>
+    const form = document.querySelector("#natalForm");
+    const result = document.querySelector("#result");
+    const signSpan = document.querySelector("#sunSign");
+    const msg = document.querySelector("#message");
+
+    const signos = [
+      {
+        sign: "aries",
+        start: "03-21",
+        end: "04-19",
+        msg: "Eres impulsivo, valiente y líder natural.",
+      },
+      {
+        sign: "tauro",
+        start: "04-20",
+        end: "05-20",
+        msg: "Tu estabilidad y sensualidad te hacen confiable.",
+      },
+      {
+        sign: "géminis",
+        start: "05-21",
+        end: "06-20",
+        msg: "Curioso, versátil y comunicativo por naturaleza.",
+      },
+      {
+        sign: "cáncer",
+        start: "06-21",
+        end: "07-22",
+        msg: "Emocional, protector y con fuerte intuición.",
+      },
+      {
+        sign: "leo",
+        start: "07-23",
+        end: "08-22",
+        msg: "Magnético, creativo y con alma de líder.",
+      },
+      {
+        sign: "virgo",
+        start: "08-23",
+        end: "09-22",
+        msg: "Analítico, ordenado y con gran atención al detalle.",
+      },
+      {
+        sign: "libra",
+        start: "09-23",
+        end: "10-22",
+        msg: "Buscas armonía, belleza y conexión auténtica.",
+      },
+      {
+        sign: "escorpio",
+        start: "10-23",
+        end: "11-21",
+        msg: "Apasionado, intenso y profundamente transformador.",
+      },
+      {
+        sign: "sagitario",
+        start: "11-22",
+        end: "12-21",
+        msg: "Libre, filosófico y amante de la aventura.",
+      },
+      {
+        sign: "capricornio",
+        start: "12-22",
+        end: "01-19",
+        msg: "Ambicioso, disciplinado y sabio más allá de tu edad.",
+      },
+      {
+        sign: "acuario",
+        start: "01-20",
+        end: "02-18",
+        msg: "Innovador, rebelde y con visión colectiva.",
+      },
+      {
+        sign: "piscis",
+        start: "02-19",
+        end: "03-20",
+        msg: "Soñador, compasivo y conectado con el alma del mundo.",
+      },
+    ];
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const birthdate = form.birthdate.value;
+      const monthDay = birthdate.slice(5); // MM-DD
+
+      let signo = "desconocido";
+      let mensaje = "";
+
+      for (const s of signos) {
+        const start = s.start;
+        const end = s.end;
+        if (
+          (start <= end && monthDay >= start && monthDay <= end) ||
+          (start > end && (monthDay >= start || monthDay <= end))
+        ) {
+          signo = s.sign;
+          mensaje = s.msg;
+          break;
+        }
+      }
+
+      signSpan.textContent = signo.toUpperCase();
+      msg.textContent = mensaje;
+      result.classList.remove("hidden");
+    });
+  </script>
+</DefaultLayout>
