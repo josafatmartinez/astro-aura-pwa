@@ -7,41 +7,41 @@ const description =
 ---
 
 <DefaultLayout {title} {description}>
-  <main class="flex items-center justify-center min-h-[80vh] w-full max-w-xl mx-auto px-4 py-6 text-white">
+  <main class="flex items-center justify-center min-h-[80vh] w-full max-w-full px-4 py-4 text-white md:max-w-xl md:mx-auto md:py-6">
     <div class="w-full">
-      <h1 class="text-2xl sm:text-3xl font-bold text-center mb-4 sm:mb-6">
+      <h1 class="text-xl font-bold text-center mb-3 sm:text-2xl md:text-3xl md:mb-6">
         🌠 Tu Carta Natal Básica
       </h1>
 
-      <form id="natalForm" class="flex flex-col gap-3 sm:gap-4 mb-6">
-        <label class="text-sm sm:text-base">
+      <form id="natalForm" class="flex flex-col gap-2 mb-4 sm:gap-3 md:gap-4 md:mb-6">
+        <label class="text-xs sm:text-sm md:text-base">
           Fecha de nacimiento:
-          <input
+            <input
             type="date"
             name="birthdate"
             required
-            class="w-full mt-1 p-2 bg-black border border-purple-500 rounded text-white text-sm"
+            class="w-full p-2 bg-black border border-purple-500 rounded text-sm mt-1 md:p-3 md:text-base"
           />
         </label>
-        <label class="text-sm sm:text-base">
+        <label class="text-xs sm:text-sm md:text-base">
           Hora de nacimiento (opcional):
           <input
             type="time"
             name="birthtime"
-            class="w-full mt-1 p-2 bg-black border border-purple-500 rounded text-white text-sm"
+            class="w-full p-2 bg-black border border-purple-500 rounded text-sm mt-1 md:p-3 md:text-base"
           />
         </label>
-        <label class="text-sm sm:text-base">
+        <label class="text-xs sm:text-sm md:text-base">
           Lugar de nacimiento (ciudad):
           <input
             type="text"
             name="birthplace"
-            class="w-full mt-1 p-2 bg-black border border-purple-500 rounded text-white text-sm"
+            class="w-full p-2 bg-black border border-purple-500 rounded text-sm mt-1 md:p-3 md:text-base"
           />
         </label>
         <button
           type="submit"
-          class="bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2 px-4 rounded hover:scale-105 transition mt-2 text-sm sm:text-base"
+          class="bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2 px-3 rounded text-xs hover:scale-105 transition mt-2 sm:text-sm md:text-base md:px-4"
         >
           Calcular
         </button>
@@ -49,12 +49,12 @@ const description =
 
       <div
         id="result"
-        class="hidden border border-purple-700 rounded p-3 sm:p-4 bg-purple-900/30"
+        class="hidden border border-purple-700 rounded p-2 bg-purple-900/30 sm:p-3 md:p-4"
       >
-        <h2 class="text-lg sm:text-xl font-semibold mb-2">
+        <h2 class="text-base font-semibold mb-1 sm:text-lg md:text-xl md:mb-2">
           🔮 Tu signo solar es: <span id="sunSign" class="font-bold"></span>
         </h2>
-        <p id="message" class="text-sm sm:text-base">Aquí aparecerá tu interpretación básica...</p>
+        <p id="message" class="text-xs sm:text-sm md:text-base">Aquí aparecerá tu interpretación básica...</p>
       </div>
     </div>
   </main>

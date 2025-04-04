@@ -21,15 +21,15 @@ const signos = [
 ---
 
 <Layout {title} {description}>
-	<main class="flex items-center justify-center min-h-screen p-4 sm:p-6 md:p-8 text-center text-white">
-		<div class="max-w-md mx-auto">
-			<h1 class="text-2xl sm:text-3xl md:text-4xl font-bold">✨ Bienvenido a AstroAura</h1>
-			<p class="mt-2 text-sm sm:text-base">Tu guía cósmica diaria</p>
-			<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-2">
-				{signos.map(signo => (
-				  <HoroscopeCard sign={signo.sign} emoji={signo.emoji} element={signo.element} />
-				))}
-			  </div>
-		</div>
-	</main>
+  <main class="flex items-center justify-center min-h-[80vh] p-4 text-center text-white">
+    <div class="w-full max-w-md mx-auto">
+      <h1 class="text-2xl font-bold md:text-3xl lg:text-4xl">✨ Bienvenido a AstroAura</h1>
+      <p class="mt-2 text-xs md:text-sm lg:text-base">Tu guía cósmica diaria</p>
+      <div class="grid grid-cols-2 gap-3 mt-4 sm:grid-cols-3 md:grid-cols-4 md:gap-4">
+        {signos.map(signo => (
+          <HoroscopeCard sign={signo.sign} emoji={signo.emoji} element={signo.element} />
+        ))}
+      </div>
+    </div>
+  </main>
 </Layout>

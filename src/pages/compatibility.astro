@@ -8,17 +8,17 @@ const description =
 ---
 
 <DefaultLayout {title} {description}>
-  <main class="max-w-xl mx-auto p-4 sm:p-6 text-white">
-    <h1 class="text-2xl sm:text-3xl font-bold text-center mb-6">
+  <main class="flex flex-col items-center justify-center min-h-[80vh] mx-auto p-4 w-full max-w-full md:max-w-xl text-white">
+    <h1 class="text-xl font-bold text-center mb-4 md:text-3xl md:mb-6">
       💖 Compatibilidad de signos
     </h1>
 
-    <form id="form" class="flex flex-col gap-4 mb-6">
-      <label class="text-lg">
+    <form id="form" class="flex flex-col gap-3 mb-4 w-full md:gap-4 md:mb-6">
+      <label class="text-base md:text-lg">
         Tu signo:
         <select
           name="mysign"
-          class="w-full p-3 bg-black border border-purple-500 rounded text-base mt-1"
+          class="w-full p-2 bg-black border border-purple-500 rounded text-sm mt-1 md:p-3 md:text-base"
         >
           {
             Object.keys(compatibility).map((sign) => (
@@ -27,11 +27,11 @@ const description =
           }
         </select>
       </label>
-      <label class="text-lg">
+      <label class="text-base md:text-lg">
         Signo de tu pareja/crush:
         <select
           name="crushsign"
-          class="w-full p-3 bg-black border border-pink-500 rounded text-base mt-1"
+          class="w-full p-2 bg-black border border-pink-500 rounded text-sm mt-1 md:p-3 md:text-base"
         >
           {
             Object.keys(compatibility).map((sign) => (
@@ -42,7 +42,7 @@ const description =
       </label>
       <button
         type="submit"
-        class="bg-gradient-to-r from-purple-600 to-pink-600 text-white py-3 px-4 rounded text-lg font-medium hover:scale-105 transition mt-2"
+        class="bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2 px-3 rounded text-base font-medium hover:scale-105 transition mt-2 md:py-3 md:px-4 md:text-lg"
       >
         Ver compatibilidad
       </button>
@@ -50,10 +50,10 @@ const description =
 
     <div
       id="result"
-      class="hidden border border-purple-700 rounded p-4 bg-purple-900/30"
+      class="hidden border border-purple-700 rounded p-3 bg-purple-900/30 w-full md:p-4"
     >
-      <h2 class="text-xl font-semibold mb-2">🔗 Resultado:</h2>
-      <p id="compatibilityText" class="text-base sm:text-lg">
+      <h2 class="text-lg font-semibold mb-1 md:text-xl md:mb-2">🔗 Resultado:</h2>
+      <p id="compatibilityText" class="text-sm md:text-lg">
         Aquí aparecerá el resultado...
       </p>
     </div>
