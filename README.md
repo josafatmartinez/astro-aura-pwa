@@ -1,48 +1,32 @@
-# Astro Starter Kit: Basics
+# AstroAura 🌌
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+AstroAura es una aplicación web progresiva (PWA) que te permite explorar el mundo de la astrología. Descubre tu horóscopo diario, compatibilidad entre signos y tu carta astral, todo en un diseño moderno y accesible.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## 🚀 Características
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- **Horóscopo diario**: Obtén predicciones personalizadas para tu signo zodiacal.
+- **Compatibilidad entre signos**: Descubre qué tan compatible eres con tu pareja o crush.
+- **Carta astral**: Explora los aspectos más profundos de tu personalidad según la astrología.
+- **PWA**: Instala la aplicación en tu dispositivo y úsala sin conexión.
+- **Diseño responsivo**: Optimizado para dispositivos móviles, tabletas y escritorio.
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## 🖼️ Capturas de pantalla
 
-## 🚀 Project Structure
+![Vista principal](./public/screenshots/home.png)
+![Compatibilidad](./public/screenshots/compatibility.png)
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🛠️ Tecnologías utilizadas
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+- [Astro](https://astro.build/) - Framework para construir sitios web rápidos.
+- [Tailwind CSS](https://tailwindcss.com/) - Framework de estilos para un diseño moderno y responsivo.
+- [Service Workers](https://developer.mozilla.org/es/docs/Web/API/Service_Worker_API) - Para funcionalidad offline.
+- [JSON](https://www.json.org/json-en.html) - Para almacenar datos de compatibilidad entre signos.
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 📦 Instalación
 
-## 🧞 Commands
+Sigue estos pasos para ejecutar el proyecto en tu entorno local:
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/tu-usuario/astro-aura-pwa.git
+   cd astro-aura-pwa
