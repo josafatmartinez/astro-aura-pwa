@@ -17,7 +17,7 @@ const initApp = () => {
   }
 
   console.info("🛠️ Modo desarrollo: inicializando con service account desde .env");
-  return initializeApp({ credential: cert(serviceAccount) });
+  return initializeApp({ credential: cert(serviceAccount), databaseURL: import.meta.env.FIREBASE_DATABASE_URL });
 };
 
 export const app = activeApps.length === 0 ? initApp() : activeApps[0];
