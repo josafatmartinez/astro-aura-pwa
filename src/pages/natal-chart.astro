@@ -7,16 +7,23 @@ const description =
 ---
 
 <DefaultLayout {title} {description}>
-  <main class="flex items-center justify-center min-h-[80vh] w-full max-w-full px-4 py-4 text-white md:max-w-xl md:mx-auto md:py-6">
+  <main
+    class="flex items-center justify-center min-h-[80vh] w-full max-w-full px-4 py-4 text-white md:max-w-xl md:mx-auto md:py-6"
+  >
     <div class="w-full">
-      <h1 class="text-xl font-bold text-center mb-3 sm:text-2xl md:text-3xl md:mb-6">
+      <h1
+        class="text-xl font-bold text-center mb-3 sm:text-2xl md:text-3xl md:mb-6"
+      >
         🌠 Tu Carta Natal Básica
       </h1>
 
-      <form id="natalForm" class="flex flex-col gap-2 mb-4 sm:gap-3 md:gap-4 md:mb-6">
+      <form
+        id="natalForm"
+        class="flex flex-col gap-2 mb-4 sm:gap-3 md:gap-4 md:mb-6"
+      >
         <label class="text-xs sm:text-sm md:text-base">
           Fecha de nacimiento:
-            <input
+          <input
             type="date"
             name="birthdate"
             required
@@ -54,7 +61,9 @@ const description =
         <h2 class="text-base font-semibold mb-1 sm:text-lg md:text-xl md:mb-2">
           🔮 Tu signo solar es: <span id="sunSign" class="font-bold"></span>
         </h2>
-        <p id="message" class="text-xs sm:text-sm md:text-base">Aquí aparecerá tu interpretación básica...</p>
+        <p id="message" class="text-xs sm:text-sm md:text-base">
+          Aquí aparecerá tu interpretación básica...
+        </p>
       </div>
     </div>
   </main>
@@ -64,86 +73,90 @@ const description =
     const result = document.querySelector("#result");
     const signSpan = document.querySelector("#sunSign");
     const msg = document.querySelector("#message");
-
+    let lastSign = "";
+    let lastData = {};
     const signos = [
       {
         sign: "aries",
         start: "03-21",
         end: "04-19",
-        msg: "Eres impulsivo, valiente y líder natural.",
+        msg: "Eres una chispa divina que enciende el fuego del comienzo. Tu energía, pasión y coraje son la llama que guía a los demás.",
       },
       {
         sign: "tauro",
         start: "04-20",
         end: "05-20",
-        msg: "Tu estabilidad y sensualidad te hacen confiable.",
+        msg: "Estabilidad y deseo te definen. Eres la tierra fértil que sostiene los sueños y el cuerpo que ama con devoción eterna.",
       },
       {
         sign: "géminis",
         start: "05-21",
         end: "06-20",
-        msg: "Curioso, versátil y comunicativo por naturaleza.",
+        msg: "Tu mente es un torbellino de curiosidad. Juegas entre mundos, palabras y pensamientos con un encanto hechizante.",
       },
       {
         sign: "cáncer",
         start: "06-21",
         end: "07-22",
-        msg: "Emocional, protector y con fuerte intuición.",
+        msg: "Eres la luna encarnada. Emocional, protector y psíquico, llevas el hogar en el alma y el amor como escudo.",
       },
       {
         sign: "leo",
         start: "07-23",
         end: "08-22",
-        msg: "Magnético, creativo y con alma de líder.",
+        msg: "Naciste para brillar. Eres el sol que da vida, un corazón noble envuelto en carisma, arte y deseo ardiente.",
       },
       {
         sign: "virgo",
         start: "08-23",
         end: "09-22",
-        msg: "Analítico, ordenado y con gran atención al detalle.",
+        msg: "Analítico y puro, tú eres la alquimia del orden y la intuición práctica. El universo te susurra en patrones y detalles.",
       },
       {
         sign: "libra",
         start: "09-23",
         end: "10-22",
-        msg: "Buscas armonía, belleza y conexión auténtica.",
+        msg: "Armonía, belleza y justicia son tus templos. Tu alma se balancea entre el amor ideal y la conexión espiritual.",
       },
       {
         sign: "escorpio",
         start: "10-23",
         end: "11-21",
-        msg: "Apasionado, intenso y profundamente transformador.",
+        msg: "Eres pasión transformada en alma. Misterioso, intenso y magnético, sabes renacer desde las sombras con poder oculto.",
       },
       {
         sign: "sagitario",
         start: "11-22",
         end: "12-21",
-        msg: "Libre, filosófico y amante de la aventura.",
+        msg: "Tu espíritu es libre y profético. Buscas verdades cósmicas, viajes internos y aventuras que expanden la conciencia.",
       },
       {
         sign: "capricornio",
         start: "12-22",
         end: "01-19",
-        msg: "Ambicioso, disciplinado y sabio más allá de tu edad.",
+        msg: "Sabio constructor del destino. Eres montaña y templo, ambición con raíces profundas, legado con propósito.",
       },
       {
         sign: "acuario",
         start: "01-20",
         end: "02-18",
-        msg: "Innovador, rebelde y con visión colectiva.",
+        msg: "Rebelde del zodiaco, mente de vanguardia. Tu visión futurista rompe estructuras con humanidad y genio eléctrico.",
       },
       {
         sign: "piscis",
         start: "02-19",
         end: "03-20",
-        msg: "Soñador, compasivo y conectado con el alma del mundo.",
+        msg: "Eres el océano del alma. Empático, soñador y místico, llevas los suspiros del cosmos en cada lágrima de luz.",
       },
     ];
 
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
-      const birthdate = form.birthdate.value;
-      const monthDay = birthdate.slice(5); // MM-DD
+
+      const birthDate = form.birthdate.value;
+      const birthTime = form.birthtime.value || null;
+      const birthPlace = form.birthplace.value;
+      const monthDay = birthDate.slice(5);
 
       let signo = "desconocido";
       let mensaje = "";
@@ -164,6 +177,24 @@ const description =
       signSpan.textContent = signo.toUpperCase();
       msg.textContent = mensaje;
       result.classList.remove("hidden");
+
+      lastSign = signo;
+      lastData = { birthDate, birthTime, birthPlace };
+
+      try {
+        const res = await fetch("/api/save-user", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ ...lastData, sunSign: lastSign }),
+        });
+
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error);
+        alert("✅ Carta natal guardada con éxito.");
+      } catch (err) {
+        alert("❌ Error al guardar carta natal.");
+        console.error(err);
+      }
     });
   </script>
 </DefaultLayout>
