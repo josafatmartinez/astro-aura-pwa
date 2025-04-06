@@ -2,16 +2,61 @@
   "aries": {
     "compatibles": ["leo", "sagitario", "acuario"],
     "incompatibles": ["cáncer", "capricornio"],
-    "mensaje": "Aries vibra con energía, aventura y pasión. Busca fuego y libertad."
+    "mensaje": "Aries vibra con energía, aventura y pasión. Busca fuego y libertad. Su llama puede encender corazones o consumirlos si no se le respeta."
   },
   "tauro": {
     "compatibles": ["virgo", "capricornio", "cáncer"],
     "incompatibles": ["acuario", "leo"],
-    "mensaje": "Tauro busca estabilidad, afecto y seguridad. Le va bien con signos tierra y agua."
+    "mensaje": "Tauro busca estabilidad, afecto y seguridad. Le va bien con signos tierra y agua. Ama lento, pero cuando lo hace... es para siempre."
+  },
+  "géminis": {
+    "compatibles": ["libra", "acuario", "aries"],
+    "incompatibles": ["virgo", "escorpio"],
+    "mensaje": "Géminis es aire en movimiento: curioso, cambiante, encantador. Conecta con quien se atreva a volar sin miedo a perder el control."
+  },
+  "cáncer": {
+    "compatibles": ["tauro", "escorpio", "piscis"],
+    "incompatibles": ["aries", "libra"],
+    "mensaje": "Cáncer ama desde la raíz. Busca vínculos profundos, donde el alma hable sin palabras. No es fácil entrar... pero imposible de olvidar."
   },
   "leo": {
     "compatibles": ["aries", "sagitario", "géminis"],
     "incompatibles": ["tauro", "escorpio"],
-    "mensaje": "Leo necesita admiración, juego y fuego. Su corazón es grande pero exigente."
+    "mensaje": "Leo necesita ser visto, admirado, amado con intensidad. No teme amar, pero espera lo mismo: una entrega total, sin sombras."
+  },
+  "virgo": {
+    "compatibles": ["tauro", "capricornio", "cáncer"],
+    "incompatibles": ["sagitario", "géminis"],
+    "mensaje": "Virgo observa los detalles del alma. Su amor es silencioso, pero leal. Necesita orden, pero también magia que lo saque de su rutina."
+  },
+  "libra": {
+    "compatibles": ["géminis", "acuario", "leo"],
+    "incompatibles": ["cáncer", "capricornio"],
+    "mensaje": "Libra busca equilibrio y belleza en el vínculo. Se enamora de quien sabe bailar entre el arte, la palabra y el deseo."
+  },
+  "escorpio": {
+    "compatibles": ["cáncer", "piscis", "virgo"],
+    "incompatibles": ["leo", "acuario"],
+    "mensaje": "Escorpio ama con el alma, con la piel y con los silencios. Su amor es fusión, renacimiento, intensidad... y prueba de fuego."
+  },
+  "sagitario": {
+    "compatibles": ["aries", "leo", "acuario"],
+    "incompatibles": ["virgo", "piscis"],
+    "mensaje": "Sagitario quiere libertad, aventura y verdad. Solo se queda con quien respete su vuelo, pero se atreva a volar a su lado."
+  },
+  "capricornio": {
+    "compatibles": ["tauro", "virgo", "escorpio"],
+    "incompatibles": ["géminis", "aries"],
+    "mensaje": "Capricornio construye amor con cimientos firmes. Necesita tiempo y confianza. Si cruzas su muro, descubrirás un corazón eterno."
+  },
+  "acuario": {
+    "compatibles": ["géminis", "libra", "sagitario"],
+    "incompatibles": ["tauro", "escorpio"],
+    "mensaje": "Acuario ama con la mente y el alma libre. No busca posesión, sino conexión cósmica. Amar a un acuario es dejarse sorprender."
+  },
+  "piscis": {
+    "compatibles": ["cáncer", "escorpio", "tauro"],
+    "incompatibles": ["géminis", "sagitario"],
+    "mensaje": "Piscis sueña con un amor que trascienda la materia. Su corazón es océano: profundo, misterioso, mágico. Amar a piscis es perderse... para encontrarse."
   }
 }
